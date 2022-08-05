@@ -1,0 +1,46 @@
+.root {
+  .form {
+    .form_card {
+      .upload_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon_button {
+          .avatar {
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+      .chip_card {
+        background-color: transparent;
+        border: 1px solid;
+        .chip {
+          margin: 5px;
+        }
+        .verydissatisfied_icon {
+          color: gray;
+        }
+        .verysatisfied_icon {
+          color: blue;
+        }
+        .satisfied_icon {
+          color: salmon;
+        }
+      }
+      .button_wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin: 20px;
+        .submit_button,
+        .cancel_button {
+          margin: 5px;
+        }
+      }
+    }
+  }
+}
+.preview{ 
+  width: 50%;
+}
