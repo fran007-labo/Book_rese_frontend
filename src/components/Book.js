@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 export default function Book1(props) {
-  const { id, title, body, imageUrl } = props;
+  const { id, title, imageUrl } = props;
   return (
     <div>
       <Card
@@ -15,7 +15,7 @@ export default function Book1(props) {
       >
         <CardMedia
           component="img"
-          image={imageUrl}
+          image={imageUrl[0]}
           alt="random"
         />
         <CardContent sx={{ flexGrow: 1 }}>
@@ -23,11 +23,11 @@ export default function Book1(props) {
             {title}
           </Typography>
           <Typography>
-            {body}
+          quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architectoz
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href={`/post/${id}`}>View</Button>
+          <Button size="small" href={`/book/${id}`}>View</Button>
           <Button size="small">Edit</Button>
         </CardActions>
       </Card>

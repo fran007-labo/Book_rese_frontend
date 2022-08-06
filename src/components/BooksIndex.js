@@ -7,12 +7,6 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-
-const cardContent = { 
-  avatarUrl: "https://joeschmoe.io/api/v1/random",
-  imageUrl: "https://picsum.photos/150"
-}
-
 export default function BooksIndex() {
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState();
@@ -22,7 +16,7 @@ export default function BooksIndex() {
 
 
   useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/posts`)
+    axios.get(`http://localhost:8000/api/v1/books`)
     .then(res => {
       setBooks(res.data)
       setPageCount(Math.ceil(res.data.length/displayNum))
@@ -37,15 +31,6 @@ export default function BooksIndex() {
     //ページ移動時に表示データを書き換える
     setDisplayedBooks(books.slice(((index - 1) * displayNum), index * displayNum))
   }
-
-  const getEachBook = (book) => {
-    const bodyBookContent = {...book, ...cardContent};
-    return (
-      <>
-        <Book {...bodyBookContent} />
-      </>
-    );
-  };
 
   return (
     <>
@@ -77,7 +62,7 @@ export default function BooksIndex() {
         <Grid container spacing={2}>
           {displayedBooks.map((book) => 
             <Grid item xs={12} sm={3} key={book.id}>
-              {getEachBook(book)}
+              <Book {...book}/>
             </Grid>
           )}
         </Grid>
