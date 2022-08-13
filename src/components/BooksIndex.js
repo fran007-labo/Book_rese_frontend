@@ -12,11 +12,11 @@ export default function BooksIndex() {
   const [pageCount, setPageCount] = useState();
   const [books, setBooks] = useState([]);
   const [displayedBooks, setDisplayedBooks] = useState([]); 
-  const displayNum = 6; 
+  const displayNum = 8; 
 
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/v1/books`)
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/books`)
     .then(res => {
       setBooks(res.data)
       setPageCount(Math.ceil(res.data.length/displayNum))

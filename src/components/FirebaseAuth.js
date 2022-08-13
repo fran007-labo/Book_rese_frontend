@@ -16,7 +16,9 @@ export default function FirebaseAuth() {
           <SingOutButton />
         </>
       ) : (
-        <SingInButton />
+        <>
+          <SingInButton />
+        </>
       )}
     </div>
   )

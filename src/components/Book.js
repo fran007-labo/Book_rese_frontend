@@ -5,14 +5,20 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import instance from "../lib/ApiClient"
 
-export default function Book1(props) {
-  const { id, title, imageUrl } = props;
+export default function Book(props) {
+
+  const { id, title, author, body, created_at, imageUrl } = props;
+  const lend = (id) => {
+    instance.post(`/books/${id}/add_books`)
+  };
+
   return (
     <div>
       <Card
         sx={{ display: 'flex', flexDirection: 'column' }}
-      >
+        >
         <CardMedia
           component="img"
           image={imageUrl[0]}
@@ -23,11 +29,11 @@ export default function Book1(props) {
             {title}
           </Typography>
           <Typography>
-          quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architectoz
+          {body}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href={`/book/${id}`}>View</Button>
+          <Button size="small" onClick={() => lend(id)}>Lend</Button>
           <Button size="small">Edit</Button>
         </CardActions>
       </Card>
