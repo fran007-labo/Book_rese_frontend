@@ -23,10 +23,11 @@ export default function FlashMessages(props) {
     }
     setOpen(false);
   };
+  
   return (
     <Stack spacing={2} sx={{ width: '100%' }}>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        <Alert onClose={handleClose} severity={status} sx={{ width: '100%' }}>
           {message}
         </Alert>
       </Snackbar>
