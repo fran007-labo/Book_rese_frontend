@@ -11,7 +11,7 @@ import {
   Avatar,
   TextField,
   Divider,
-} from "@material-ui/core";
+} from "@mui/material";
 
 
 import axios from 'axios';

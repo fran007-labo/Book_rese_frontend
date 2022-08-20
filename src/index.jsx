@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import RouterConfig from "./RouterConfig";
 import Header  from './components/Common/Header';
 import { BrowserRouter } from "react-router-dom";
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 
 ReactDOM.render(
   <React.StrictMode>

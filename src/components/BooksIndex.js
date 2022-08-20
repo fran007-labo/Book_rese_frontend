@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import { Grid } from '@material-ui/core'
+import { Grid } from '@mui/material'
 import { Book } from './Index'
 import Pagination from '@mui/material/Pagination';
 import Typography from '@mui/material/Typography';

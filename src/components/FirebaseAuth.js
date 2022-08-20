@@ -42,7 +42,7 @@ function SingInButton() {
   } 
   return (
     <div>
-      <Button onClick={SingInWithGoogle}>
+      <Button onClick={SingInWithGoogle} variant="contained" color="success">
         グーグルでサインイン
       </Button>
     </div> 
@@ -59,7 +59,7 @@ function SingOutButton() {
 
   return (
     <div>
-      <Button onClick={() => singOut()}>
+      <Button onClick={() => singOut()} color="secondary">
         サインアウト
       </Button>
     </div>

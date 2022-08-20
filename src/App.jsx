@@ -1,6 +1,6 @@
 import React from 'react';
 import { BooksIndex } from './components/Index';
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 
 export default function App() {
   return (
