@@ -1,8 +1,9 @@
-import React from 'react';
+import { FC } from "react";
 import { BooksIndex } from './components/Index';
 import Grid from '@mui/material/Grid';
 
-export default function App() {
+const Home: FC = () => {
+
   return (
     <div className="App">
       <Grid container alignItems="center" justifyContent="center">
@@ -13,3 +14,5 @@ export default function App() {
     </div>
   )
 }
+
+export default Home
