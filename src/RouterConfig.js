@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import {Route, Switch} from "react-router";
 
 import { RegiBookForm, Cart } from './components/Index';
 import Home from './Home';
@@ -7,11 +7,11 @@ import Home from './Home';
 export default function RouterConfig() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/RegiBookForm" element={<RegiBookForm/>} />
-        <Route path="/Cart" element={<Cart/>} />
-      </Routes>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/RegiBookForm" component={RegiBookForm} />
+        <Route exact path="/Cart" component={Cart} />
+      </Switch>
     </>
   )
 }

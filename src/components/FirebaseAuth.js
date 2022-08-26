@@ -5,8 +5,15 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { signIn } from '../reducks/users/operations';
+
 export default function FirebaseAuth() {
   const [user] = useAuthState(auth);
+
+  const selector = useSelector((state) => state);
+  
+  console.log(selector.users);
 
   return (
     <div>
@@ -26,6 +33,8 @@ export default function FirebaseAuth() {
 
 // サインイン 
 function SingInButton() {
+  const dispatch = useDispatch();
+
   const SingInWithGoogle = () => {
     signInWithPopup(auth, provider)
     .then((result) => {
@@ -34,7 +43,9 @@ function SingInButton() {
       const data = { name: user.displayName, email: user.email, uid: user.uid }
       user.getIdToken().then(idToken => {
         axios.post(url, { token: idToken, registration: data });
-      })
+      }); 
+
+      dispatch(signIn(user.uid, user.displayName, user.email));
 
     }).catch((error) => {
       console.log('error Occur')

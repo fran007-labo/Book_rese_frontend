@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function MenuButton() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -28,7 +28,7 @@ export default function MenuButton() {
         onClose={handleClose}
       >
       <MenuItem onClick={handleClose}>
-        <Link to='/RegiBookForm'>本の登録をする</Link>
+        {/* <Link to='/RegiBookForm'>本の登録をする</Link> */}
       </MenuItem>
       <MenuItem onClick={handleClose}>My account</MenuItem>
       <MenuItem onClick={handleClose}>Logout</MenuItem>
