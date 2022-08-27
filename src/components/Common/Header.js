@@ -1,13 +1,9 @@
-import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { FirebaseAuth, MenuButton } from '../Index';
-
-const theme = createTheme();
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -13,10 +13,9 @@ import {
   Divider,
 } from "@mui/material";
 
-
 import axios from 'axios';
-// styels
 import styles from "../styles/RegiBookForm.module.scss";
+
 
 export default function RegiBookForm() {
   const [name, setName] = useState("");
