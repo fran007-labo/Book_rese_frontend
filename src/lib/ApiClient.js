@@ -1,5 +1,5 @@
 import axios from "axios";
-import { auth } from "../firebase";
+import { auth } from "../settings/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 const instance = axios.create({

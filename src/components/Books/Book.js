@@ -5,8 +5,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import instance from "../lib/ApiClient";
-import { FlashMessages } from './Index'
+import instance from "../../lib/ApiClient";
+import { FlashMessages } from '../Index'
 
 export default function Book(props) {
   const [flashMessage, setFlashMessage]  = useState({message: '', status: '', open: false});

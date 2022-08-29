@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { FirebaseAuth, MenuButton } from '../Index';
+import { SignIn, MenuButton } from '../Index';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +29,7 @@ export default function Header() {
           <Typography variant="h6" className={classes.title}>
             <Box textAlign="left">Sample</Box>
           </Typography>
-          <FirebaseAuth /> 
+          <SignIn /> 
         </Toolbar>
       </AppBar>
     </div>

@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 
 import axios from 'axios';
-import styles from "../styles/RegiBookForm.module.scss";
+import styles from "../../styles/RegiBookForm.module.scss";
 
 
 export default function RegiBookForm() {

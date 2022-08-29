@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RouterConfig from "./RouterConfig";
+import RouterConfig from "./settings/RouterConfig";
 import Header  from './components/Common/Header';
 import Grid from '@mui/material/Grid';
 

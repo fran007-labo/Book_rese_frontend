@@ -1,18 +1,19 @@
-import React from 'react'
-import { signInWithPopup } from 'firebase/auth'
-import { auth, provider } from "../firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
+import {useState, useEffect} from 'react'
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
+// firebase
+import { signInWithPopup } from 'firebase/auth'
+import { auth, provider } from "../settings/firebase";
+
+// reducks
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useDispatch, useSelector } from 'react-redux';
 import { signIn } from '../reducks/users/operations';
 
-export default function FirebaseAuth() {
-  const [user] = useAuthState(auth);
-
+export default function SignIn() {
   const selector = useSelector((state) => state);
-  
+  const [user] = useAuthState(auth);
   console.log(selector.users);
 
   return (
@@ -34,23 +35,22 @@ export default function FirebaseAuth() {
 // サインイン 
 function SingInButton() {
   const dispatch = useDispatch();
-
+  const url = 'http://localhost:8000/api/v1/users/registrations';
   const SingInWithGoogle = () => {
     signInWithPopup(auth, provider)
     .then((result) => {
-      const url = 'http://localhost:8000/api/v1/users/registrations';
-      const user = result.user
-      const data = { name: user.displayName, email: user.email, uid: user.uid }
+      const user = result.user;
+      const data = { uid: user.uid, name: user.displayName, email: user.email };
       user.getIdToken().then(idToken => {
         axios.post(url, { token: idToken, registration: data });
-      }); 
-
+      });
       dispatch(signIn(user.uid, user.displayName, user.email));
 
     }).catch((error) => {
       console.log('error Occur')
     });
   } 
+
   return (
     <div>
       <Button onClick={SingInWithGoogle} variant="contained" color="success">
@@ -62,9 +62,8 @@ function SingInButton() {
 
 // サインアウト
 function SingOutButton() {
+  const url = 'http://localhost:8000/api/v1/users/registrations';
   const singOut = () => {
-    const url = 'http://localhost:8000/api/v1/users/sign_outs'
-    axios.post(url);
     auth.signOut();
   }
 
