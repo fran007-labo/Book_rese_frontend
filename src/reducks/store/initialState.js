@@ -1,4 +1,7 @@
-const initialState = {
+export const initialState = {
+  books: {
+    list: []
+  },
   users: {
     uid: "", 
     name: "",
@@ -6,5 +9,3 @@ const initialState = {
     isSignedIn: false
   }
 }
-
-export default initialState

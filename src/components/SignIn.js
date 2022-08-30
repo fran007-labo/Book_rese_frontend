@@ -12,9 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signIn } from '../reducks/users/operations';
 
 export default function SignIn() {
-  const selector = useSelector((state) => state);
   const [user] = useAuthState(auth);
-  console.log(selector.users);
 
   return (
     <div>

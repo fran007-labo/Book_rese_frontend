@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import RouterConfig from "./settings/RouterConfig";
 import Header  from './components/Common/Header';
@@ -8,6 +7,8 @@ import { Provider } from 'react-redux';
 import createStore from './reducks/store/store';
 import * as History from 'history';
 import { ConnectedRouter } from 'connected-react-router';
+import './styles/style.css';
+import Lp from './components/LP/Lp';
 
 const history = History.createBrowserHistory();
 export const store = createStore(history);

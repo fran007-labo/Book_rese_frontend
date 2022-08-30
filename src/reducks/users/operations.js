@@ -6,10 +6,11 @@ export const listenAuthState = () => {
   return (dispatch) => { 
     return auth.onAuthStateChanged( user => {
       if (user) { 
-        signInDispatch(dispatch, user.uid, user.displayName, user.email)
-        dispatch(push('/'));
+        const userInfo = setSignInValue(user.uid, user.displayName, user.email)
+        dispatch(signInAction(userInfo))
       } else {
-        dispatch(push('/Cart'));
+        // dispatch(push('/Cart'));
+        console.log('operation.js listenAuthState error')
       }
     })
   }
@@ -17,7 +18,9 @@ export const listenAuthState = () => {
 
 export const signIn = (uid, displayName, email) => {
   return (dispatch) => {
-    signInDispatch(dispatch, uid, displayName, email);
+    const userInfo = setSignInValue(uid, displayName, email)
+    dispatch(signInAction(userInfo));
+    
     dispatch(push('/'))
   };
 }
@@ -31,13 +34,11 @@ export const signOut = () => {
   }
 }
 
-function signInDispatch(dispatch, uid, name, email) { 
-  return dispatch(
-    signInAction({
-      uid: uid, 
-      name: name,
-      email: email,
-      isSignedIn: true
-    })
-  )
+function setSignInValue(uid, name, email) { 
+  return {
+    uid: uid, 
+    name: name,
+    email: email,
+    isSignedIn: true
+  }
 }

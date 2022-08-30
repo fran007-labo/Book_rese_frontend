@@ -16,7 +16,6 @@ import {
 import axios from 'axios';
 import styles from "../../styles/RegiBookForm.module.scss";
 
-
 export default function RegiBookForm() {
   const [name, setName] = useState("");
   const [image, setImage] = useState();
