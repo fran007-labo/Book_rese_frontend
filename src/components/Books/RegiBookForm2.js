@@ -67,7 +67,10 @@ export default function RegiBookForm2() {
         <div className="center">
           <PrimaryButton
             label={"商品情報を保存"}
-            onClick={() => dispatch(saveBook(title, description, publisher, sizes, images))}
+            onClick={() => 
+              dispatch(saveBook(title, description, publisher, author, sizes, images))
+              // console.log(`title: ${title}, discription: ${description}, publisher: ${publisher}, images: ${images}`)
+            }
           />
         </div>
       </div>
