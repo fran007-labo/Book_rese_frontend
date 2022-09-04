@@ -1,8 +1,7 @@
 // Books
 export {default as Book} from './Books/Book';
 export {default as BooksIndex} from './Books/BooksIndex';
-export {default as RegiBookForm} from './Books/RegiBookForm';
-export {default as RegiBookForm2} from './Books/RegiBookForm2';
+export {default as BookEdit} from './Books/BookEdit';
 
 export {default as Home} from './Home';
 

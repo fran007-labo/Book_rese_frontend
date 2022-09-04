@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { Cart, Home, RegiBookForm, RegiBookForm2, Lp } from '../components/Index';
+import { Cart, Home, Lp, BookEdit } from '../components/Index';
 import { Auth } from "../components/Auth";
 
 export default function RouterConfig() {
@@ -11,9 +11,9 @@ export default function RouterConfig() {
         <Route exact path="/Lp" component={Lp} />
         
         <Auth> 
-          <Route exact path="/RegiBookForm" component={RegiBookForm} />
           <Route exact path="/Cart" component={Cart} />
-          <Route exact path="/RegiBookForm2" component={RegiBookForm2} />
+          <Route exact path="/BookEdit" component={BookEdit} />
+          <Route path="/book/edit(/:id)?" component={BookEdit} />
         </Auth>
       </Switch>
     </>

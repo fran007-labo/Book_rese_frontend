@@ -7,11 +7,14 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import instance from "../../lib/ApiClient";
 import { FlashMessages } from '../Index'
+import { Link } from 'react-router-dom';
 
 export default function Book(props) {
   const [flashMessage, setFlashMessage]  = useState({message: '', status: '', open: false});
   
-  const { id, title, author, body, created_at, imageUrl } = props;
+  const BookInfo = props;
+  const { id, title, author, body, imageUrl, publisher } = BookInfo;
+
   const lend = (id) => {
     instance.post(`/books/${id}/add_books`).then(response => {
       setFlashMessage({message: response.data['message'], status: response.data['status'], open: true})
@@ -39,7 +42,9 @@ export default function Book(props) {
         </CardContent>
         <CardActions>
           <Button size="small" onClick={() => lend(id)}>Lend</Button>
-          <Button size="small">Edit</Button>
+          <Button size="small">
+            <Link to={{pathname: `/book/edit/${id}`, state: BookInfo }}>Edit</Link>
+          </Button>
         </CardActions>
       </Card>
     </div>

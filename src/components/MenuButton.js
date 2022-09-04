@@ -28,7 +28,7 @@ export default function MenuButton() {
         onClose={handleClose}
       >
       <MenuItem onClick={handleClose}>
-        {/* <Link to='/RegiBookForm'>本の登録をする</Link> */}
+        {/* <Link to='/BookEdit'>本の登録をする</Link> */}
       </MenuItem>
       <MenuItem onClick={handleClose}>My account</MenuItem>
       <MenuItem onClick={handleClose}>Logout</MenuItem>

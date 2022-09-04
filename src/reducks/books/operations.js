@@ -121,11 +121,11 @@ import instance from "../../lib/ApiClient"
 //   }
 // }
 
-export const saveBook = (title, description, publisher, author, sizes, images) => {
+export const saveBook = (title, body, publisher, author, sizes, images) => {
   return async (dispatch) => {
     const data = {
       title: title,
-      body: description,
+      body: body,
       publisher: publisher,
       author: author,
       sizes: sizes

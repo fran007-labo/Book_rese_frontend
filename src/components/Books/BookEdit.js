@@ -5,32 +5,38 @@ import { useDispatch } from "react-redux";
 import { saveBook } from "../../reducks/books/operations";
 
 // for style 
-import { 
-  PrimaryButton, 
+import {
+  PrimaryButton,
   // SelectBox, 
   TextInput
 } from "../UIkit";
 import ImageArea from "./ImageArea";
 
-export default function RegiBookForm2() {
-  const dispatch = useDispatch();
+// router
+import { useLocation } from "react-router-dom";
 
-  const [title, setTitle] = useState(""),
-        [description, setDescription] = useState(""),
-        [images, setImages] = useState([]),
-        // [category, setCategory] = useState(""),
-        // [categories, setCategories] = useState([]),
-        [author, setAuthor] = useState(""),
-        [publisher, setPublisher] = useState(""),
-        [sizes, setSizes] = useState([]);
+export default function BookEdit() {
+
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  const sentEditBookInfo = location.state
+
+  const 
+    [id, setId] = useState(""),
+    [title, setTitle] = useState(""),
+    [body, setBody] = useState(""),
+    [images, setImages] = useState([]),
+    [author, setAuthor] = useState(""),
+    [publisher, setPublisher] = useState("")
 
   const inputTitle = useCallback((event) => {
     setTitle(event.target.value)
   }, [setTitle])
 
-  const inputDescription = useCallback((event) => {
-    setDescription(event.target.value)
-  }, [setDescription])
+  const inputBody = useCallback((event) => {
+    setBody(event.target.value)
+  }, [setBody])
 
   const inputAuthor = useCallback((event) => {
     setAuthor(event.target.value)
@@ -39,6 +45,17 @@ export default function RegiBookForm2() {
   const inputPublisher = useCallback((event) => {
     setPublisher(event.target.value)
   }, [setPublisher])
+
+  useEffect(() => {
+    if (sentEditBookInfo !== "") {
+      setId(sentEditBookInfo.id)
+      setTitle(sentEditBookInfo.title)
+      setBody(sentEditBookInfo.body)
+      setImages(sentEditBookInfo.imageUrl)
+      setAuthor(sentEditBookInfo.author)
+      setPublisher(sentEditBookInfo.publisher)
+    }
+  }, [sentEditBookInfo])
 
   return (
     <section>
@@ -51,7 +68,7 @@ export default function RegiBookForm2() {
         />
         <TextInput
           fullWidth={true} label={"本の説明"} multiline={true}
-          onChange={inputDescription} rows={5} value={description} type={"text"}
+          onChange={inputBody} rows={5} value={body} type={"text"}
         />
         <TextInput
           fullWidth={true} label={"著者"} multiline={false} required={true}
@@ -67,9 +84,8 @@ export default function RegiBookForm2() {
         <div className="center">
           <PrimaryButton
             label={"商品情報を保存"}
-            onClick={() => 
-              dispatch(saveBook(title, description, publisher, author, sizes, images))
-              // console.log(`title: ${title}, discription: ${description}, publisher: ${publisher}, images: ${images}`)
+            onClick={() =>
+              dispatch(saveBook(title, body, publisher, author, images))
             }
           />
         </div>

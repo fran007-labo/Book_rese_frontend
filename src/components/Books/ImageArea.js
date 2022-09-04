@@ -59,7 +59,9 @@ export default function ImageArea(props) {
     <div>
       <div className="p-grid__list-images">
         {props.images.length > 0 && (
-          props.images.map(image => <ImagePreview delete={deleteImage} id={image.id} path={image.path} key={image.id} />)
+          props.images.map((image, index) => {
+            return <ImagePreview delete={deleteImage} path={image.path} key={index} />
+          })
         )}
       </div>
       <div className="u-text-right">
