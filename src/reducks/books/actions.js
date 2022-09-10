@@ -1,23 +1,23 @@
-export const DELETE_PRODUCT = "DELETE_PRODUCT";
-export const deleteProductAction = (products) => {
+// export const DELETE_PRODUCT = "DELETE_PRODUCT";
+// export const deleteProductAction = (products) => {
+//   return {
+//     type: "DELETE_PRODUCT",
+//     payload: products
+//   }
+// }
+
+export const FETCH_BOOKS = "FETCH_BOOKS";
+export const fetchBooksAction = (books) => {
   return {
-    type: "DELETE_PRODUCT",
-    payload: products
+    type: "FETCH_BOOKS",
+    payload: books
   }
 }
 
-export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
-export const fetchProductsAction = (products) => {
-  return {
-    type: "FETCH_PRODUCTS",
-    payload: products
-  }
-}
-
-export const INIT_PRODUCTS = "INIT_PRODUCTS";
-export const initProductsAction = () => {
-  return {
-    type: "INIT_PRODUCTS",
-    payload: null
-  }
-}
+// export const INIT_PRODUCTS = "INIT_PRODUCTS";
+// export const initProductsAction = () => {
+//   return {
+//     type: "INIT_PRODUCTS",
+//     payload: null
+//   }
+// }

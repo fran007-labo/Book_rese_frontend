@@ -1,8 +1,8 @@
 import { createSelector } from "reselect";
 
-const productsSelector = (state) => state.products;
+const booksSelector = (state) => state.books;
 
-export const getProducts = createSelector(
-  [productsSelector],
+export const getBooks = createSelector(
+  [booksSelector],
   state => state.list
 );

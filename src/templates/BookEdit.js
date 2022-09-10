@@ -2,15 +2,15 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 // reducks
 import { useDispatch } from "react-redux";
-import { saveBook } from "../../reducks/books/operations";
+import { saveBook } from "../reducks/books/operations";
 
 // for style 
 import {
   PrimaryButton,
   // SelectBox, 
   TextInput
-} from "../UIkit";
-import ImageArea from "./ImageArea";
+} from "../components/UIkit";
+import ImageArea from "../components/Books/ImageArea";
 
 // router
 import { useLocation } from "react-router-dom";

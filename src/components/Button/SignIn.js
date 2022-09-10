@@ -4,12 +4,12 @@ import axios from 'axios';
 
 // firebase
 import { signInWithPopup } from 'firebase/auth'
-import { auth, provider } from "../settings/firebase";
+import { auth, provider } from "../../settings/firebase";
 
 // reducks
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useDispatch, useSelector } from 'react-redux';
-import { signIn } from '../reducks/users/operations';
+import { signIn } from '../../reducks/users/operations';
 
 export default function SignIn() {
   const [user] = useAuthState(auth);

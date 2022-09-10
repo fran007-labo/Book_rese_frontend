@@ -3,20 +3,11 @@ import { initialState } from '../store/initialState';
 
 export const BooksReducer = (state = initialState.books, action) => {
   switch (action.type) {
-    // case Actions.DELETE_PRODUCT:
-    //   return {
-    //     ...state,
-    //     list: action.payload
-    //   };
-    // case Actions.FETCH_PRODUCTS:
-    //   return {
-    //     ...state,
-    //     list: action.payload
-    //   };
-    // case Actions.INIT_PRODUCTS:
-    //   return {
-    //     ...initialState.products
-    //   };
+    case Actions.FETCH_BOOKS:
+      return {
+        ...state,
+        list: [...action.payload]
+      };
     default:
       return state
   }

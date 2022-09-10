@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { BooksIndex } from './Index';
+import { BooksIndex } from './index';
 import Grid from '@mui/material/Grid';
 
 const Home: FC = () => {

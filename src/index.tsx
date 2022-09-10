@@ -8,7 +8,6 @@ import createStore from './reducks/store/store';
 import * as History from 'history';
 import { ConnectedRouter } from 'connected-react-router';
 import './styles/style.css';
-import Lp from './components/LP/Lp';
 
 const history = History.createBrowserHistory();
 export const store = createStore(history);
