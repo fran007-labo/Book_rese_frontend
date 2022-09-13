@@ -1,5 +1,5 @@
 import { push } from "connected-react-router";
-import instance from "../../lib/ApiClient"
+import apiUrl from "../../settings/ApiClient"
 
 export const saveBook = (title, body, publisher, author, sizes, images) => {
   return async (dispatch) => {
@@ -21,7 +21,7 @@ export const saveBook = (title, body, publisher, author, sizes, images) => {
     // }
 
     const url = '/books';
-    return instance.post(url, { books: data, images: imageList})
+    return apiUrl.post(url, { books: data, images: imageList})
       .then(() => {
         dispatch(push('/'))
       }).catch((error) => {

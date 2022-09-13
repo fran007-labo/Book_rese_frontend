@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
 import { createTheme } from '@mui/material/styles';
@@ -7,7 +7,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import instance from "../../lib/ApiClient";
+import apiUrl from "../../settings/ApiClient";
 import { FlashMessages } from '../Index'
 import { Link } from 'react-router-dom';
 
@@ -61,7 +61,7 @@ const useStyles = makeStyles(({
   }
 }));
 
-export default function Book2(props) {
+export default function Book(props) {
   const classes = useStyles();
   const [flashMessage, setFlashMessage] = useState({ message: '', status: '', open: false });
 
@@ -69,7 +69,7 @@ export default function Book2(props) {
   const { id, title, author, body, imageUrl, publisher } = BookInfo;
 
   const lend = (id) => {
-    instance.post(`/books/${id}/add_books`).then(response => {
+    apiUrl.post(`/books/${id}/add_books`).then(response => {
       setFlashMessage({ message: response.data['message'], status: response.data['status'], open: true })
     })
   };
