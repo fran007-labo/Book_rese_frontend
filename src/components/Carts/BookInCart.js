@@ -20,7 +20,6 @@ export default function BookInCart(props) {
     setValue(newValue);
   };
 
-  console.log(BookInfo);
   return (
     <>
       <Card sx={{ mb: 5 }}>

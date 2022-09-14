@@ -9,7 +9,7 @@ import {
   PrimaryButton,
   // SelectBox, 
   TextInput
-} from "../components/UIkit";
+} from "../components/Index";
 import ImageArea from "../components/Books/ImageArea";
 
 // router

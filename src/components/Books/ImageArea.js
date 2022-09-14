@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import { useDispatch } from "react-redux";
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 // import { showLoadingAction, hideLoadingAction } from "../../reducks/loading/actions";
-import {ImagePreview} from "./ImagePreview";
+import ImagePreview from "./ImagePreview";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 
 const useStyles = makeStyles({
