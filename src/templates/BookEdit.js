@@ -20,7 +20,11 @@ export default function BookEdit() {
   const dispatch = useDispatch();
   const location = useLocation();
 
+///////
+  // /book/edit/[:id]のpath時。
+  // parameter名がstateの中身格納されている。
   const sentEditBookInfo = location.state
+///////
 
   const 
     [id, setId] = useState(""),
@@ -47,7 +51,7 @@ export default function BookEdit() {
   }, [setPublisher])
 
   useEffect(() => {
-    if (sentEditBookInfo !== "") {
+    if (sentEditBookInfo) {
       setId(sentEditBookInfo.id)
       setTitle(sentEditBookInfo.title)
       setBody(sentEditBookInfo.body)

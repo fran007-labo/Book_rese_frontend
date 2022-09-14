@@ -1,24 +1,16 @@
 import { push } from "connected-react-router";
 import apiUrl from "../../settings/ApiClient"
 
-export const saveBook = (title, body, publisher, author, sizes, images) => {
+export const saveBook = (title, body, publisher, author, images) => {
   return async (dispatch) => {
     const data = {
       title: title,
       body: body,
       publisher: publisher,
       author: author,
-      sizes: sizes
     }
 
     const imageList = images
-
-    // if (id === "") {
-    //   const ref = productsRef.doc()
-    //   data.created_at = timestamp;
-    //   id = ref.id;
-    //   data.id = id;
-    // }
 
     const url = '/books';
     return apiUrl.post(url, { books: data, images: imageList})
