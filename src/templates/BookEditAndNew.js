@@ -15,15 +15,15 @@ import ImageArea from "../components/Books/ImageArea";
 // router
 import { useLocation } from "react-router-dom";
 
-export default function BookEdit() {
+export default function BookEditAndNew() {
 
   const dispatch = useDispatch();
-  const location = useLocation();
+  const paramsFromLink = useLocation();
 
 ///////
   // /book/edit/[:id]のpath時。
   // parameter名がstateの中身格納されている。
-  const sentEditBookInfo = location.state
+  const sentEditBookInfo = paramsFromLink.state
 ///////
 
   const 

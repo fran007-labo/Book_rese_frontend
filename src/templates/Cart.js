@@ -6,7 +6,7 @@ import {BookInCart, CheckOutAll} from '../components/Index'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
-function Cart() {
+export default function Cart() {
 
   const [cartBooks, setCartBooks] = useState([]);
 
@@ -53,5 +53,3 @@ function Cart() {
     </Grid>
   );
 }
-
-export default Cart

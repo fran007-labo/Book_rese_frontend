@@ -1,8 +1,7 @@
-import { FC } from "react";
 import { BooksIndex } from './index';
 import Grid from '@mui/material/Grid';
 
-const Home: FC = () => {
+export default function Home() {
 
   return (
     <div className="App">
@@ -14,5 +13,3 @@ const Home: FC = () => {
     </div>
   )
 }
-
-export default Home

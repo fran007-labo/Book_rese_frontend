@@ -10,7 +10,6 @@ function Lp() {
   return (
     <>
       <Router>
-        <Navbar />
         <Switch>
           <Route path='/lp' exact component={Home} />
           <Route path='/services' component={Services} />

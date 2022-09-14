@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import RouterConfig from "./settings/RouterConfig";
-import Header  from './components/Common/Header';
-import Grid from '@mui/material/Grid';
+import Header from './components/Common/Header';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import createStore from './reducks/store/store';
@@ -14,14 +14,13 @@ export const store = createStore(history);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Grid container direction="column">
-      <Grid item>
-        <Header />
-      </Grid>
+    <Router>
+      <Header />
+      
       <ConnectedRouter history={history}>
         <RouterConfig />
       </ConnectedRouter>
-    </Grid>
+    </Router>
   </Provider>
   , document.getElementById('root')
 );
