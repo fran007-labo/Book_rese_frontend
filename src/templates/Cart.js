@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import apiUrl from '../settings/ApiClient'
+import { apiUrl } from '../settings/ApiClient'
 import {BookInCart, CheckOutAll} from '../components/Index'
 
 // mui 
@@ -24,12 +24,14 @@ function Cart() {
 
   return (
     <Grid container alignItems="center" justifyContent="center">
-      <Grid item xs={10}>
+      <section className="c-section-wrapin">
+      {/* <Grid item xs={10}> */}
         <Box sx={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-start',
-          pt: 10
+          pt: 10,
+          gap: '4rem'
         }}>
           <div>
             {cartBooks.length > 0 && (
@@ -46,7 +48,8 @@ function Cart() {
           {/* </div> */}
 
         </Box>
-      </Grid>
+      {/* </Grid> */}
+      </section>
     </Grid>
   );
 }

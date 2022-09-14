@@ -7,7 +7,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import apiUrl from "../../settings/ApiClient";
+import { apiUrl } from "../../settings/ApiClient";
 import { FlashMessages } from '../Index'
 import { Link } from 'react-router-dom';
 

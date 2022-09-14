@@ -1,5 +1,5 @@
 import { push } from "connected-react-router";
-import apiUrl from "../../settings/ApiClient"
+import { apiUrl } from "../../settings/ApiClient"
 
 export const saveBook = (title, body, publisher, author, images) => {
   return async (dispatch) => {

@@ -2,7 +2,7 @@ import axios from "axios";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
-const apiUrl = axios.create({
+export const apiUrl = axios.create({
   baseURL: 'http://localhost:8000/api/v1'
 })
 
@@ -16,5 +16,3 @@ onAuthStateChanged(auth, (user) => {
     )
   }
 })
-
-export default apiUrl;
