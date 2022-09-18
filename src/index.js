@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import RouterConfig from "./settings/RouterConfig";
 import Header from './components/Common/Header';
-import { BrowserRouter, Routes} from 'react-router-dom';
+import { BrowserRouter, Switch} from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import createStore from './reducks/store/store';
@@ -15,13 +15,10 @@ export const store = createStore(history);
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Routes>
-        <ConnectedRouter history={history}>
-          <RouterConfig />
-        </ConnectedRouter>
-      
-        <Header />
-      </Routes>
+      <Header />
+      <ConnectedRouter history={history}>
+        <RouterConfig />
+      </ConnectedRouter>
     </BrowserRouter>
   </Provider>
   , document.getElementById('root')
