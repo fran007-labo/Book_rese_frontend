@@ -15,7 +15,7 @@ export default function SignIn() {
   const [user] = useAuthState(auth);
 
   return (
-    <div>
+    <>
       {user ? ( 
         <>
           <UserInfo />
@@ -26,7 +26,7 @@ export default function SignIn() {
           <SingInButton />
         </>
       )}
-    </div>
+    </>
   )
 }
 
