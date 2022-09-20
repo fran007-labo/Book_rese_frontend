@@ -6,14 +6,17 @@ export default function RouterConfig() {
   return (
     <>
       <Routes>
-        <Route path="/books" element={<BooksIndex/>} />
+        <Route path="/" element={<BooksIndex/>} />
         <Route path="/lp" element={<Lp/>} />
 
-        {/* <Auth> */}
-          <Route path="cart" element={<Cart/>} />
-          <Route path="book/new" element={<BookEditAndNew/>} />
-          <Route path="book/edit(/:id)?" element={<BookEditAndNew/>} />
-        {/* </Auth> */}
+
+        { Auth (
+          <> 
+            <Route path="cart" element={<Cart/>} />
+            <Route path="book/new" element={<BookEditAndNew/>} />
+            <Route path="book/edit(/:id)?" element={<BookEditAndNew/>} />
+          </>
+        )}
       </Routes>
     </>
   )

@@ -15,8 +15,8 @@ export const Auth = ({children}) => {
   }, [dispatch, isSignedIn]);
 
   if (!isSignedIn) {
-    return <></>
+    return true
   } else {
-    return children
+    return false
   }
 }

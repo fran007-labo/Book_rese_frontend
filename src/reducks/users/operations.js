@@ -21,7 +21,7 @@ export const signIn = (uid, displayName, email) => {
     const userInfo = setSignInValue(uid, displayName, email)
     dispatch(signInAction(userInfo));
     
-    dispatch(push('/'))
+    // dispatch(push('/'))
   };
 }
 
@@ -29,8 +29,8 @@ export const signOut = () => {
   return (dispatch) => {
     auth.signOut().then(() => {
       dispatch(signOutAction());
-      dispatch(push('/'));
-    });
+      // dispatch(push('/'));
+    }); 
   }
 }
 
