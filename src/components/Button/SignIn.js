@@ -7,12 +7,21 @@ import { signInWithPopup } from 'firebase/auth'
 import { auth, provider } from "../../settings/firebase";
 
 // reducks
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useDispatch, useSelector } from 'react-redux';
-import { signIn } from '../../reducks/users/operations';
+import { signIn, signOut, listenAuthState} from '../../reducks/users/operations';
+import { getSignedIn, getUserName, getUserPhotoURL } from "../../reducks/users/selectors";
 
 export default function SignIn() {
-  const [user] = useAuthState(auth);
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+  const isSignedIn = getSignedIn(selector);
+  const user = isSignedIn;
+
+  useEffect( () => {
+    if (!user) {
+      dispatch(listenAuthState());
+    }
+  }, [dispatch, isSignedIn]);
 
   return (
     <>
@@ -42,7 +51,7 @@ function SingInButton() {
       user.getIdToken().then(idToken => {
         axios.post(url, { token: idToken, registration: data });
       });
-      dispatch(signIn(user.uid, user.displayName, user.email));
+      dispatch(signIn(user.uid, user.displayName, user.email, user.photoURL));
 
     }).catch((error) => {
       console.log('error Occur')
@@ -60,9 +69,11 @@ function SingInButton() {
 
 // サインアウト
 function SingOutButton() {
+  const dispatch = useDispatch();
   const url = 'http://localhost:8000/api/v1/users/registrations';
   const singOut = () => {
     auth.signOut();
+    dispatch(signOut())
   }
 
   return (
@@ -75,10 +86,15 @@ function SingOutButton() {
 }
 
 function UserInfo() {
+  const selector = useSelector((state) => state);
+  const userName = getUserName(selector);
+  const userPhotoURL = getUserPhotoURL(selector);
+  
   return (
     <div className="userInfo">
-      <img src={auth.currentUser.photoURL} alt="" />
-      <p>{auth.currentUser.displayName}</p>
+      {console.log(selector.users)}
+      <img src={userPhotoURL} alt="" />
+      <p>{userName}</p>
     </div>
   );
 }

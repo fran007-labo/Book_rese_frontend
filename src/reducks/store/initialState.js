@@ -6,6 +6,7 @@ export const initialState = {
     uid: "", 
     name: "",
     email: "",
+    photoURL: "",
     isSignedIn: false
   }
 }

@@ -3,7 +3,14 @@ import Book from "../components/Books/Book";
 import Pagination from '@mui/material/Pagination';
 import axios from 'axios';
 
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getSignedIn } from "../reducks/users/selectors";
+
 export default function BooksIndex() {
+
+  // const selector = useSelector((state) => state);
+  // const isSignedIn = getSignedIn(selector);
+  // console.log(isSignedIn)
 
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState();

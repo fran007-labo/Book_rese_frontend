@@ -25,7 +25,6 @@ export default function Cart() {
   return (
     <Grid container alignItems="center" justifyContent="center">
       <section className="c-section-wrapin">
-      {/* <Grid item xs={10}> */}
         <Box sx={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -42,13 +41,8 @@ export default function Cart() {
               })
             )}
           </div>
-
-          {/* <div> */}
-            <CheckOutAll BookIdList={BookIdList} />
-          {/* </div> */}
-
+          <CheckOutAll BookIdList={BookIdList} />
         </Box>
-      {/* </Grid> */}
       </section>
     </Grid>
   );

@@ -16,3 +16,13 @@ export const getUserName = createSelector(
   [usersSelector], 
   state => state.name
 )
+
+export const getUserEmail = createSelector(
+  [usersSelector], 
+  state => state.email
+)
+
+export const getUserPhotoURL = createSelector(
+  [usersSelector], 
+  state => state.photoURL
+)
