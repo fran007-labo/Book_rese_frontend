@@ -28,7 +28,7 @@ export default function Header() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-          <NavLink to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          <NavLink to='/lp' className='navbar-logo' onClick={closeMobileMenu}>
             COMPANY
             <i className='fab fa-typo3' />
           </NavLink>
@@ -37,8 +37,8 @@ export default function Header() {
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <NavLink to='/lp' className='nav-navlinks' onClick={closeMobileMenu}>
-                Home
+              <NavLink to='/' className='nav-navlinks' onClick={closeMobileMenu}>
+                Books
               </NavLink>
             </li>
             <li className='nav-item'>

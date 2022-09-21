@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useEffect} from 'react'
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
@@ -89,10 +89,9 @@ function UserInfo() {
   const selector = useSelector((state) => state);
   const userName = getUserName(selector);
   const userPhotoURL = getUserPhotoURL(selector);
-  
+
   return (
     <div className="userInfo">
-      {console.log(selector.users)}
       <img src={userPhotoURL} alt="" />
       <p>{userName}</p>
     </div>
