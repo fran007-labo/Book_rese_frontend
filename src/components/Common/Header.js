@@ -43,7 +43,7 @@ export default function Header() {
             </li>
             <li className='nav-item'>
               <NavLink
-                to='/cart'
+                to='/book/new'
                 className='nav-navlinks'
                 onClick={closeMobileMenu}
               >
