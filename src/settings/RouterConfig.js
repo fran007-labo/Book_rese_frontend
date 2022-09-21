@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Auth } from "./Auth";
+import { PrivateRoute } from "./PrivateRoute";
 
 import {BooksIndex, BookEditAndNew, Lp, Cart} from "../templates/index";
 export default function RouterConfig() {
@@ -9,14 +9,12 @@ export default function RouterConfig() {
         <Route path="/" element={<BooksIndex/>} />
         <Route path="/lp" element={<Lp/>} />
 
+        <Route element={<PrivateRoute />}>
+          <Route path="/cart" element={<Cart/>} exact/>
+          <Route path="/book/new" element={<BookEditAndNew/>} exact/>
+          <Route path="/book/edit(/:id)?" element={<BookEditAndNew/>} exact/>
+        </Route>
 
-        { Auth (
-          <> 
-            <Route path="cart" element={<Cart/>} />
-            <Route path="book/new" element={<BookEditAndNew/>} />
-            <Route path="book/edit(/:id)?" element={<BookEditAndNew/>} />
-          </>
-        )}
       </Routes>
     </>
   )

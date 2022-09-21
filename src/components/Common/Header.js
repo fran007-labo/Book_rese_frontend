@@ -47,21 +47,21 @@ export default function Header() {
                 className='nav-navlinks'
                 onClick={closeMobileMenu}
               >
-                my cart
+                Register Book
               </NavLink>
             </li>
             <li className='nav-item'>
               <NavLink
-                to='/products'
+                to='/cart'
                 className='nav-navlinks'
                 onClick={closeMobileMenu}
               >
-                Products
+                My cart
               </NavLink>
             </li>
 
             <li className='nav-item'>
-              <div className='nav-navlinks' > 
+              <div className='nav-navlinks' >
                 <SignIn />
               </div>
             </li>
