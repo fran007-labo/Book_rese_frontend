@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
+import { PrimaryButton } from '../Index'
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
@@ -12,13 +13,12 @@ import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 export default function CheckOutAll(props) {
   
-  const BookIdList = props.BookIdList
-  console.log(BookIdList)
-  
   const [value, setValue] = useState(new Date());
   const handleChange = (newValue) => {
     setValue(newValue);
   };
+
+  
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function CheckOutAll(props) {
             Start Date
           </Typography>
         </li>
-        <ListItem>
+        <ListItem sx={{justifyContent: 'center'}}>
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               inputFormat="MM/dd/yyyy"
@@ -58,7 +58,7 @@ export default function CheckOutAll(props) {
             Return Date
           </Typography>
         </li>
-        <ListItem>
+        <ListItem sx={{justifyContent: 'center'}}>
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               inputFormat="MM/dd/yyyy"
@@ -67,6 +67,15 @@ export default function CheckOutAll(props) {
               renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
+        </ListItem>
+        <Divider component="li" />
+        <ListItem sx={{justifyContent: 'center'}}>
+          <PrimaryButton 
+            label={"本を借りる"}
+            onClick={() =>
+              'nkfjsn'
+            }
+            />
         </ListItem>
       </List>
     </Card>
