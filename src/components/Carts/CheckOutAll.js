@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 
 import { PrimaryButton } from '../Index'
 import Card from '@mui/material/Card';
@@ -10,15 +10,27 @@ import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { apiUrl } from '../../settings/ApiClient'
 
 export default function CheckOutAll(props) {
-  
-  const [value, setValue] = useState(new Date());
-  const handleChange = (newValue) => {
-    setValue(newValue);
-  };
 
-  
+  const [startDate, setStartDate]   = useState(new Date());
+  const [returnDate, setReturnDate] = useState(new Date());
+
+  const inputStartDate = useCallback((newValue) => {
+    setStartDate(newValue)
+  }, [startDate])
+
+  const inputReturnDate = useCallback((newValue) => {
+    setReturnDate(newValue)
+  }, [returnDate])
+
+  const checkOutAll = () => {
+    const url = '/check_outs'
+    apiUrl.post(url).then((r) => {
+      console.log(r)
+    })
+  }
 
   return (
     <>
@@ -41,8 +53,8 @@ export default function CheckOutAll(props) {
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               inputFormat="MM/dd/yyyy"
-              value={value}
-              onChange={handleChange}
+              value={startDate}
+              onChange={inputStartDate}
               renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
@@ -62,8 +74,8 @@ export default function CheckOutAll(props) {
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               inputFormat="MM/dd/yyyy"
-              value={value}
-              onChange={handleChange}
+              value={returnDate}
+              onChange={inputReturnDate}
               renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
@@ -73,7 +85,7 @@ export default function CheckOutAll(props) {
           <PrimaryButton 
             label={"本を借りる"}
             onClick={() =>
-              'nkfjsn'
+              checkOutAll()
             }
             />
         </ListItem>
