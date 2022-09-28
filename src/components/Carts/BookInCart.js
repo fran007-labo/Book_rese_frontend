@@ -43,26 +43,6 @@ export default function BookInCart(props) {
               </Typography>
             </Box>
           </Box>
-          <CardActions disableSpacing sx={{ justifyContent: 'space-around', pt: 3 }}>
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DesktopDatePicker
-                label="Date start"
-                inputFormat="MM/dd/yyyy"
-                value={value}
-                onChange={handleChange}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            </LocalizationProvider>
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DesktopDatePicker
-                label="Date return"
-                inputFormat="MM/dd/yyyy"
-                value={value}
-                onChange={handleChange}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            </LocalizationProvider>
-          </CardActions>
         </CardContent>
       </Card>
     </>

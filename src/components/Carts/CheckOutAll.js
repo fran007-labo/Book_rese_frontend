@@ -27,7 +27,8 @@ export default function CheckOutAll(props) {
 
   const checkOutAll = () => {
     const url = '/check_outs'
-    apiUrl.post(url).then((r) => {
+    const data = {start_date: startDate, return_date: returnDate}
+    apiUrl.post(url, data).then((r) => {
       console.log(r)
     })
   }
