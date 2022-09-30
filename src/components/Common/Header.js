@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <>
-      <nav className='navbar'>
+      <nav className='header'>
         <div className='navbar-container'>
           <NavLink to='/lp' className='navbar-logo' onClick={closeMobileMenu}>
             COMPANY

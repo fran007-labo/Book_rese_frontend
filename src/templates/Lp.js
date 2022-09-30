@@ -1,7 +1,7 @@
-import './LP/Lp.css';
-import Cards from './LP/components/Cards';
-import HeroSection from './LP/components/HeroSection';
-import Footer from './LP/components/Footer';
+import '../components/LP/Lp.css';
+import Cards from '../components/LP/components/Cards';
+import HeroSection from '../components/LP/components/HeroSection';
+import Footer from '../components/LP/components/Footer';
 
 function Lp() {
   return (
