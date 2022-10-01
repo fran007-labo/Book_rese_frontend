@@ -39,8 +39,8 @@ const UserList = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
+          {rows.map((row, index) => (
+            <TableRow key={index}>
               <TableCell className="tableCell">
                 <div className="cellWrapper">
                   <img src={row.img} alt="" className="image" />

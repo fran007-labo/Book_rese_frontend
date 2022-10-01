@@ -11,15 +11,13 @@ export default function RouterConfig() {
       <Routes>
         <Route path="/" element={<BooksIndex/>} />
         <Route path="/lp" element={<Lp/>} />
-        <Route path="/dashboard" element={<Dashboard/>} exact/>
-        <Route path="/dashboard(/:id)?" element={<Dashboard/>} exact/>
-        {/* <Route path="/dashboard/user(/:id)?" element={<Dashboard/>} /> */}
-        <Route path="/dashboard/user" element={<UserDetail/>} exact/>
 
         <Route element={<PrivateRoute />}>
+          <Route path="/dashboard" element={<Dashboard/>} exact/>
+          <Route path="/dashboard/user/:id" element={<UserDetail/>} />
           <Route path="/cart" element={<Cart/>} exact/>
           <Route path="/book/new" element={<BookEditAndNew/>} exact/>
-          <Route path="/book/edit(/:id)?" element={<BookEditAndNew/>} exact/>
+          <Route path="/book/edit/:id" element={<BookEditAndNew/>}/>
         </Route>
 
       </Routes>

@@ -58,6 +58,22 @@ export default function Header() {
               >
                 My cart
               </NavLink>
+              <p>//////</p>
+              <NavLink
+                to='/dashboard'
+                className='nav-navlinks'
+                onClick={closeMobileMenu}
+              >
+                dashboard
+              </NavLink>
+              <p>//////</p>
+              <NavLink
+                to='/dashboard/user/1'
+                className='nav-navlinks'
+                onClick={closeMobileMenu}
+              >
+                user dashboard
+              </NavLink>
             </li>
 
             <li className='nav-item'>
