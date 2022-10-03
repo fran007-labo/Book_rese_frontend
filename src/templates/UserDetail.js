@@ -1,15 +1,13 @@
 import "../styles/UserDatail.scss";
 import { 
-  Sidebar, Navbar, Widget, Featured, ReservedBookList, 
+  ReservedBookList, 
   Chart 
 } from "../components/Dashboard/index";
 
 const UserDetail = () => {
   return (
     <div className="single">
-      <Sidebar />
       <div className="singleContainer">
-        <Navbar />
         <div className="top">
           <div className="left">
             <div className="editButton">Edit</div>

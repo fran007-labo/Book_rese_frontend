@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles/Dashboard.scss";
-import { UserList, Sidebar, Navbar, Widget } from "../components/Dashboard/index";
+import { UserList, Widget } from "../components/Dashboard/index";
 
 import { apiUrl } from "../settings/ApiClient";
 
@@ -13,9 +13,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <Sidebar />
       <div className="homeContainer">
-        <Navbar />
         <div className="widgets">
           <Widget type="user" />
           <Widget type="book" />

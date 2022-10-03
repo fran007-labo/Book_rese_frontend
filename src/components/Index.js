@@ -18,3 +18,6 @@ export {default as PrimaryButton} from './UIkit/PrimaryButton';
 
 // Common
 export {default as FlashMessages} from './Common/FlashMessage.js';
+export {default as Header} from './Common/Header.js';
+export {default as Sidebar} from './Common/sidebar/Sidebar';
+export {default as Navbar} from './Common/navbar/Navbar';

@@ -1,3 +1,9 @@
+.baseContainer {
+  display: flex;
+}
+.homeContainer {
+  flex: 6;
+}
 /*********** Module Spacer ***********/
 .module-spacer--extra-extra-small {
   height: 12px

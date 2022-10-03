@@ -12,13 +12,13 @@ export default function RouterConfig() {
         <Route path="/" element={<BooksIndex/>} />
         <Route path="/lp" element={<Lp/>} />
 
-        <Route element={<PrivateRoute />}>
+        {/* <Route element={<PrivateRoute />}> */}
           <Route path="/dashboard" element={<Dashboard/>} exact/>
           <Route path="/dashboard/user/:id" element={<UserDetail/>} />
           <Route path="/cart" element={<Cart/>} exact/>
           <Route path="/book/new" element={<BookEditAndNew/>} exact/>
           <Route path="/book/edit/:id" element={<BookEditAndNew/>}/>
-        </Route>
+        {/* </Route> */}
 
       </Routes>
     </div>
