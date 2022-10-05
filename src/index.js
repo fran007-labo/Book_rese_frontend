@@ -8,7 +8,7 @@ import * as History from 'history';
 import { ConnectedRouter } from 'connected-react-router';
 import './styles/style.css';
 import { DarkModeContextProvider } from "./context/darkModeContext";
-import { Sidebar, Navbar } from "./components/Index";
+import { Sidebar, Header } from "./components/Index";
 
 const history = History.createBrowserHistory();
 export const store = createStore(history);
@@ -17,16 +17,9 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <DarkModeContextProvider>
-        <div className="baseContainer">
-          <Sidebar />
-          <div className="homeContainer">
-            <Navbar />
-            {/* <Header /> */}
-            <ConnectedRouter history={history}>
-              <RouterConfig />
-            </ConnectedRouter>
-          </div>
-        </div>
+        <ConnectedRouter history={history}>
+          <RouterConfig />
+        </ConnectedRouter>
       </DarkModeContextProvider>
     </BrowserRouter>
   </Provider>

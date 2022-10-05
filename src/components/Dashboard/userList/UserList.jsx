@@ -7,25 +7,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-const UserList = () => {
-  const rows = [
-    {
-      user: "Acer Nitro 5",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      startDate: "1 March",
-      returnDate: "1 March",
-      books: 3,
-      status: "Approved",
-    },
-    {
-      user: "Acer Nitro 5",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      startDate: "1 March",
-      returnDate: "1 March",
-      books: 3,
-      status: "Approved",
-    }
-  ];
+const UserList = (props) => {
+  const rows = props.usersList.data
   return (
     <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -39,15 +22,15 @@ const UserList = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row, index) => (
+          {rows && rows.map((row, index) => (
             <TableRow key={index}>
               <TableCell className="tableCell">
                 <div className="cellWrapper">
                   <img src={row.img} alt="" className="image" />
-                  {row.user}
+                  {row.userName}
                 </div>
               </TableCell>
-              <TableCell className="tableCell">{row.books}</TableCell>
+              <TableCell className="tableCell">{row.bookCount}</TableCell>
               <TableCell className="tableCell">{row.startDate}</TableCell>
               <TableCell className="tableCell">{row.returnDate}</TableCell>
               <TableCell className="tableCell">

@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Dashboard.scss";
 import { UserList, Widget } from "../components/Dashboard/index";
-
 import { apiUrl } from "../settings/ApiClient";
 
 const Dashboard = () => {
+  const [usersList, setUsersList] = useState([])
   useEffect(() => {
     apiUrl.get('/dashboards').then(response => {
-      console.log(response)
+      setUsersList(response)
     })
   }, [])
 
@@ -21,7 +21,7 @@ const Dashboard = () => {
         </div>
         <div className="listContainer">
           <div className="listTitle">Now lending Users</div>
-          <UserList />
+          <UserList usersList={usersList}/>
         </div>
       </div>
     </div>

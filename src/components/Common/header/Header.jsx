@@ -1,4 +1,4 @@
-import "./navbar.scss";
+import "./header.scss";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -10,7 +10,7 @@ import { DarkModeContext } from "../../../context/darkModeContext";
 import { useContext } from "react";
 import { SignIn } from "../../Index"
 
-const Navbar = () => {
+const Header = () => {
   const { dispatch } = useContext(DarkModeContext);
 
   return (
@@ -59,4 +59,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

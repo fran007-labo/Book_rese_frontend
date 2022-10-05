@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import "./list.scss";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -6,17 +7,16 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import {apiUrl} from "../../../settings/ApiClient";
 
 const ReservedBookList = () => {
-  const rows = [
-    {
-      book: "Acer Nitro 5",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      startDate: "1 March",
-      returnDate: "1 March",
-      status: "Approved",
-    }
-  ];
+  const [userInfo, setUserInfo] = useState([])
+  useEffect(() => {
+    apiUrl.get('/dashboards/users/2').then(response => {
+      setUserInfo(response.data)
+    })
+  }, [])
+  
   return (
     <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -30,7 +30,7 @@ const ReservedBookList = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row, index) => (
+          {userInfo && userInfo.map((row, index) => (
             <TableRow key={index}>
               <TableCell className="tableCell">
                 <div className="cellWrapper">

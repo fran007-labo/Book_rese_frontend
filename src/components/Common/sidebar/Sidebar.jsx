@@ -20,13 +20,13 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <p className="title">Users</p>
-          <Link to="dashboard/" style={{ textDecoration: "none" }}>
+          <Link to="dashboards/" style={{ textDecoration: "none" }}>
             <li>
               <DashboardIcon className="icon" />
               <span>Dashboard</span>
             </li>
           </Link>
-          <Link to="dashboard/user/1" style={{ textDecoration: "none" }}>
+          <Link to="dashboards/users/1" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>My page</span>
