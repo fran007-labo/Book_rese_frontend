@@ -21,7 +21,6 @@
     "@types/react-redux": "^7.1.24",
     "axios": "^0.26.1",
     "axios-case-converter": "^0.9.0",
-    "connected-react-router": "^6.9.3",
     "date-fns": "^2.29.1",
     "dotenv": "^16.0.1",
     "firebase": "^9.9.3",

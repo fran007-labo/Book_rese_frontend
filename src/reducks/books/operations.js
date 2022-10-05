@@ -1,4 +1,3 @@
-import { push } from "connected-react-router";
 import { apiUrl } from "../../settings/ApiClient"
 
 export const saveBook = (title, body, publisher, author, images) => {
@@ -15,7 +14,7 @@ export const saveBook = (title, body, publisher, author, images) => {
     const url = '/books';
     return apiUrl.post(url, { books: data, images: imageList})
       .then(() => {
-        dispatch(push('/'))
+        // dispatch(push('/'))
       }).catch((error) => {
         throw new Error(error)
       })

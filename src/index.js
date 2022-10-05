@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import createStore from './reducks/store/store';
 import * as History from 'history';
-import { ConnectedRouter } from 'connected-react-router';
+// import { ConnectedRouter } from 'connected-react-router';
 import './styles/style.css';
 import { DarkModeContextProvider } from "./context/darkModeContext";
 import { Sidebar, Header } from "./components/Index";
@@ -17,9 +17,9 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <DarkModeContextProvider>
-        <ConnectedRouter history={history}>
+        {/* <ConnectedRouter history={history}> */}
           <RouterConfig />
-        </ConnectedRouter>
+        {/* </ConnectedRouter> */}
       </DarkModeContextProvider>
     </BrowserRouter>
   </Provider>
