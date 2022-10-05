@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Dashboard.scss";
 import { UserList, Widget } from "../components/Dashboard/index";
+
+// headerにtokenを入れるためのモジュール
 import { apiUrl } from "../settings/ApiClient";
+import { auth } from "../settings/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const Dashboard = () => {
   const [usersList, setUsersList] = useState([])
   useEffect(() => {
-    apiUrl.get('/dashboards').then(response => {
-      setUsersList(response)
+    onAuthStateChanged(auth, async(user) => {
+      const idToken = await auth.currentUser.getIdToken()
+      apiUrl.get('/dashboards', { headers: {"Authorization" : `Bearer ${idToken}`} }).then(response => {
+        setUsersList(response)
+      })
     })
   }, [])
-
   return (
     <div className="dashboard">
       <div className="homeContainer">

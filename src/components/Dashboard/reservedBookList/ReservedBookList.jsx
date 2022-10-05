@@ -7,16 +7,23 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+
+// headerにtokenを入れるためのモジュール
 import {apiUrl} from "../../../settings/ApiClient";
+import { auth } from "../../../settings/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const ReservedBookList = () => {
   const [userInfo, setUserInfo] = useState([])
   useEffect(() => {
-    apiUrl.get('/dashboards/users/2').then(response => {
-      setUserInfo(response.data)
+    onAuthStateChanged(auth, async(user) => {
+      const idToken = await auth.currentUser.getIdToken()
+      apiUrl.get('/dashboards/users/2', { headers: {"Authorization" : `Bearer ${idToken}`} }).then(response => {
+        setUserInfo(response.data)
+      })
     })
   }, [])
-  
+
   return (
     <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
