@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/Dashboard.scss";
 import { UserList, Widget } from "../components/Dashboard/index";
 
-// headerにtokenを入れるためのモジュール
+// http/headerにtokenを入れるためのモジュール
 import { apiUrl } from "../settings/ApiClient";
 import { auth } from "../settings/firebase";
 import { onAuthStateChanged } from "firebase/auth";

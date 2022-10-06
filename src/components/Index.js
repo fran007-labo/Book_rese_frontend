@@ -6,6 +6,7 @@ export {default as ImagePreview} from './Books/ImagePreview';
 // Carts
 export {default as BookInCart} from './Carts/BookInCart';
 export {default as CheckOutAll} from './Carts/CheckOutAll';
+export {default as NothingsInCart} from './Carts/NothingsInCart';
 
 // Button
 export {default as SignIn} from './Button/SignIn';
