@@ -53,7 +53,8 @@ export default function BookEditAndNew() {
 
   const saveBook = async () => {
     const bookRegiInfo = await createFormData()
-    apiUrl.post('/books', bookRegiInfo).then((r) => { 
+    const config = {headers: {"Content-Type": "multipart/form-data"}} // 画像ファイルを取り扱うのでform-dataで送信
+    apiUrl.post('/books',bookRegiInfo, config).then((r) => { 
       console.log(r)
     })
   }
