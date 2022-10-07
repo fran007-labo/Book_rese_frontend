@@ -2,18 +2,20 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 // reducks
 import { useDispatch } from "react-redux";
-import { saveBook } from "../reducks/books/operations";
+// import { saveBook } from "../reducks/books/operations";
 
 // for style 
 import {
   PrimaryButton,
-  // SelectBox, 
   TextInput
 } from "../components/Index";
 import ImageArea from "../components/Books/ImageArea";
 
 // router
 import { useLocation } from "react-router-dom";
+
+// api
+import { apiUrl } from "../settings/ApiClient"
 
 export default function BookEditAndNew() {
 
@@ -33,6 +35,28 @@ export default function BookEditAndNew() {
     [images, setImages] = useState([]),
     [author, setAuthor] = useState(""),
     [publisher, setPublisher] = useState("")
+
+
+  const createFormData = () => { 
+    const formData = new FormData()
+    if (!images) return  
+    images.map((image) => {
+      formData.append('images[]', image)
+    })
+
+    formData.append('stringsData[title]', title)
+    formData.append('stringsData[body]', body)
+    formData.append('stringsData[author]', author)
+    formData.append('stringsData[publisher]', publisher)
+    return formData
+  }
+
+  const saveBook = async () => {
+    const bookRegiInfo = await createFormData()
+    apiUrl.post('/books', bookRegiInfo).then((r) => { 
+      console.log(r)
+    })
+  }
 
   const inputTitle = useCallback((event) => {
     setTitle(event.target.value)
@@ -83,13 +107,12 @@ export default function BookEditAndNew() {
           onChange={inputPublisher} rows={1} value={publisher} type={"text"}
         />
         <div className="module-spacer--small" />
-        {/* <SetSizesArea sizes={sizes} setSizes={setSizes} /> */}
         <div className="module-spacer--small" />
         <div className="center">
           <PrimaryButton
             label={"商品情報を保存"}
             onClick={() =>
-              dispatch(saveBook(title, body, publisher, author, images))
+              saveBook()
             }
           />
         </div>
