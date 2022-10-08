@@ -13,7 +13,6 @@ function Cards() {
               src='https://picsum.photos/150'
               text='Explore the hidden waterfall deep inside the Amazon Jungle'
               label='Adventure'
-              path='/services'
             />
             <CardItem
               src='https://picsum.photos/150'

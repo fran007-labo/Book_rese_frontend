@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
@@ -16,16 +16,19 @@ export default function SignIn() {
   const selector = useSelector((state) => state);
   const isSignedIn = getSignedIn(selector);
   const user = isSignedIn;
+  const [load, setLoad] = useState(false);
 
   useEffect( () => {
     if (!user) {
       dispatch(listenAuthState());
     }
+
+    setLoad(true)
   }, [dispatch, isSignedIn]);
 
   return (
     <>
-      {user ? ( 
+      {load && user ? ( 
         <>
           <UserInfo />
           <SingOutButton />
@@ -78,7 +81,7 @@ function SingOutButton() {
 
   return (
     <div>
-      <Button onClick={() => singOut()} color="secondary">
+      <Button onClick={() => singOut()} variant="contained" color="primary">
         サインアウト
       </Button>
     </div>
@@ -91,8 +94,8 @@ function UserInfo() {
   const userPhotoURL = getUserPhotoURL(selector);
 
   return (
-    <div className="userInfo">
-      <img src={userPhotoURL} alt="" />
+    <div className="item">
+      <img src={userPhotoURL} alt="" className="avatar"/>
       <p>{userName}</p>
     </div>
   );

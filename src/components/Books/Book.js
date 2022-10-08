@@ -84,18 +84,18 @@ export default function Book(props) {
       />
       <CardContent className={classes.content}>
         <div>
-          <Typography className={classes.productName} color="textSecondary" component="p">
-            {title}
-          </Typography>
           <Typography className={classes.price} component="p">
-            {author}
+            タイトル: {title}
+          </Typography>
+          <Typography className={classes.productName} color="textSecondary" component="p">
+            著者: {author}
           </Typography>
         </div>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => lend(id)}>Lend</Button>
+        <Button size="small" onClick={() => lend(id)}>カートへ追加</Button>
         <Button size="small">
-          <Link to={{ pathname: `/book/edit/${id}`, state: BookInfo }}>Edit</Link>
+          <Link to={{ pathname: `/book/edit/${id}`, state: BookInfo }}>編集する</Link>
         </Button>
       </CardActions>
     </Card>
