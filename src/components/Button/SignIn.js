@@ -28,7 +28,7 @@ export default function SignIn() {
 
   return (
     <>
-      {load && user ? ( 
+      { user ? ( 
         <>
           <UserInfo />
           <SingOutButton />

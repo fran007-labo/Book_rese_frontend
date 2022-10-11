@@ -5,7 +5,7 @@ import CardItem from './CardItem';
 function Cards() {
   return (
     <div className='cards'>
-      <h1>Check out these EPIC Destinations!</h1>
+      <h1>Check out these Books</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
@@ -13,12 +13,13 @@ function Cards() {
               src='https://picsum.photos/150'
               text='Explore the hidden waterfall deep inside the Amazon Jungle'
               label='Adventure'
+              path='/'
             />
             <CardItem
               src='https://picsum.photos/150'
               text='Travel through the Islands of Bali in a Private Cruise'
               label='Luxury'
-              path='/services'
+              path='/'
             />
           </ul>
           <ul className='cards__items'>
@@ -26,19 +27,19 @@ function Cards() {
               src='https://picsum.photos/150'
               text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
               label='Mystery'
-              path='/services'
+              path='/'
             />
             <CardItem
               src='https://picsum.photos/150'
               text='Experience Football on Top of the Himilayan Mountains'
               label='Adventure'
-              path='/products'
+              path='/'
             />
             <CardItem
               src='https://picsum.photos/150'
               text='Ride through the Sahara Desert on a guided camel tour'
               label='Adrenaline'
-              path='/sign-up'
+              path='/'
             />
           </ul>
         </div>

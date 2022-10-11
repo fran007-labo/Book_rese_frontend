@@ -9,23 +9,23 @@ function HeroSection() {
     <div className='hero-container'>
       <video src='https://picsum.photos/150' autoPlay loop muted />
       <h1>Bizlink Library</h1>
+      <p>最初にサインインをして下さいね。</p>
+      <p>下の[スタート]ボタンを押すと本が見れます。</p>
+      <p>まだまだバグが多いかと思いますが修正していきます。</p>
       <div className='hero-btns'>
           <Button
             className='btns'
             buttonStyle='btn--outline'
             buttonSize='btn--large'
           >
-            <Link to='/'>
-              GET STARTED
-            </Link>
+            スタート
           </Button>
         <Button
           className='btns'
           buttonStyle='btn--primary'
           buttonSize='btn--large'
-          onClick={console.log('hey')}
         >
-          WATCH TRAILER <i className='far fa-play-circle' />
+          Youtube クリック<i className='far fa-play-circle' />
         </Button>
       </div>
     </div>
