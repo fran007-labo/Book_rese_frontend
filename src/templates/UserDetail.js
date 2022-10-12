@@ -3,8 +3,16 @@ import {
   ReservedBookList, 
   Chart 
 } from "../components/Dashboard/index";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserName, getUserEmail, getUserPhotoURL } from "../reducks/users/selectors";
 
 const UserDetail = () => {
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+
+  const userName = getUserName(selector);
+  const userEmail = getUserEmail(selector);
+  const userIcon = getUserPhotoURL(selector);
   return (
     <div className="single">
       <div className="singleContainer">
@@ -14,29 +22,19 @@ const UserDetail = () => {
             <h1 className="title">Information</h1>
             <div className="item">
               <img
-                src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                src={userIcon}
                 alt=""
                 className="itemImg"
               />
               <div className="details">
-                <h1 className="itemTitle">Jane Doe</h1>
+                <h1 className="itemTitle">{userName}</h1>
                 <div className="detailItem">
                   <span className="itemKey">Email:</span>
-                  <span className="itemValue">janedoe@gmail.com</span>
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Phone:</span>
-                  <span className="itemValue">+1 2345 67 89</span>
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Address:</span>
-                  <span className="itemValue">
-                    Elton St. 234 Garden Yd. NewYork
-                  </span>
+                  <span className="itemValue">{userEmail}</span>
                 </div>
                 <div className="detailItem">
                   <span className="itemKey">Country:</span>
-                  <span className="itemValue">USA</span>
+                  <span className="itemValue">JAPAN</span>
                 </div>
               </div>
             </div>
