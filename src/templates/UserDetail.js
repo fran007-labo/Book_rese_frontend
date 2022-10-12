@@ -1,7 +1,7 @@
 import "../styles/UserDatail.scss";
 import { 
   ReservedBookList, 
-  Chart 
+  Chart
 } from "../components/Dashboard/index";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserName, getUserEmail, getUserPhotoURL } from "../reducks/users/selectors";

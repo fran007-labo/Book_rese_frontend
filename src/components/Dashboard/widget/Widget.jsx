@@ -47,7 +47,7 @@ const Widget = ({ type }) => {
       break;
     case "lend":
       data = {
-        title: "NOW LEND",
+        title: "NOW LENDING",
         isMoney: false,
         link: "View net earnings",
         icon: (

@@ -32,6 +32,7 @@ export default function BooksIndex() {
       <Pagination count={pageCount} page={page} color="primary" size="large" onChange={handleChange} style={{ display: "inline-block", padding: '30px'}} />
       <h1>Googleで簡単にサインイン出来ますので最初にお願いします。</h1>
       <h1>パスワードは僕が知ることが出来ませんので、安心してログインして下さい。</h1>
+      <h1>今後スマホ表示や管理者に問い合わせ機能などアップデートしていきます。</h1>
       <div className="p-grid__row">
         {displayedBooks.map((book, index) => 
           <Book {...book} key={index}/>

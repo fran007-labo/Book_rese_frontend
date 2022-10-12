@@ -25,7 +25,7 @@ const ReservedBookList = () => {
   }, [])
 
   return (
-    <TableContainer component={Paper} className="table">
+    <TableContainer component={Paper} className="list">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -48,7 +48,7 @@ const ReservedBookList = () => {
               <TableCell className="tableCell">{row.startDate}</TableCell>
               <TableCell className="tableCell">{row.returnDate}</TableCell>
               <TableCell className="tableCell">
-                <span className={`status ${row.status}`}>{row.status}</span>
+                <span className={`status ${row.isReturn}`}>{row.isReturn ? '返却済み' : '未返却'}</span>
               </TableCell>
               <TableCell className="tableCell">返却を完了する</TableCell>
             </TableRow>

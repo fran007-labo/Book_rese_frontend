@@ -9,7 +9,6 @@ function HeroSection() {
     <div className='hero-container'>
       <video src='https://picsum.photos/150' autoPlay loop muted />
       <h1>Bizlink Library</h1>
-      <p>最初にサインインをして下さいね。</p>
       <p>下の[スタート]ボタンを押すと本が見れます。</p>
       <p>まだまだバグが多いかと思いますが修正していきます。</p>
       <div className='hero-btns'>
