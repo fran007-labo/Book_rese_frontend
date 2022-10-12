@@ -14,8 +14,7 @@ export default function BookInCart(props) {
   const [value, setValue] = React.useState(new Date());
 
   const BookInfo = props;
-  const { id, title, author, body, imageUrl, publisher } = BookInfo;
-
+  const { title, author, imageUrl } = BookInfo;
   const handleChange = (newValue) => {
     setValue(newValue);
   };
@@ -31,15 +30,14 @@ export default function BookInCart(props) {
             <CardMedia
               component="img"
               sx={{ maxWidth: 250, height: 150 }}
-              image={imageUrl}
-              alt="Paella dish"
+              image={process.env.REACT_APP_S3_ENDPOINT + imageUrl}
             />
             <Box sx={{ px: 2 }}>
               <Typography variant="body2" color="text.secondary">
                 {title}
               </Typography>
               <Typography variant="body2" color="text.secondary" pt={3}>
-                {body}
+                {author}
               </Typography>
             </Box>
           </Box>
