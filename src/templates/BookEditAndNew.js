@@ -87,7 +87,8 @@ export default function BookEditAndNew() {
   }, [sentEditBookInfo])
 
   return (
-    <section>
+    <section className="c-section-wrapin">
+      <h1>誰でも本を登録することが出来ます。</h1>
       <h2 className="u-text__headline u-text-center">商品の登録・編集</h2>
       <div className="c-section-container">
         <ImageArea images={images} setImages={setImages} />

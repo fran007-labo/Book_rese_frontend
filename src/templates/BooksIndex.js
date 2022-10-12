@@ -7,7 +7,7 @@ export default function BooksIndex() {
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState();
   const [displayedBooks, setDisplayedBooks] = useState([]); 
-  const displayNum = 8; 
+  const displayNum = 6; 
   const [books, setBooks] = useState([])
 
   useEffect(() => {
@@ -30,6 +30,8 @@ export default function BooksIndex() {
   return (
     <section className="c-section-wrapin">
       <Pagination count={pageCount} page={page} color="primary" size="large" onChange={handleChange} style={{ display: "inline-block", padding: '30px'}} />
+      <h1>Googleで簡単にサインイン出来ますので最初にお願いします。</h1>
+      <h1>パスワードは僕が知ることが出来ませんので、安心してログインして下さい。</h1>
       <div className="p-grid__row">
         {displayedBooks.map((book, index) => 
           <Book {...book} key={index}/>

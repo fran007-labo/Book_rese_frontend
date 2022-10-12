@@ -79,13 +79,12 @@ export default function Book(props) {
       {flashMessage.open && <FlashMessages {...flashMessage}/>}
       <CardMedia
         className={classes.media}
-        image={imageUrl[0]}
-        title=""
+        image={process.env.REACT_APP_S3_ENDPOINT + imageUrl[0]}
       />
       <CardContent className={classes.content}>
         <div>
           <Typography className={classes.price} component="p">
-            タイトル: {title}
+            {title}
           </Typography>
           <Typography className={classes.productName} color="textSecondary" component="p">
             著者: {author}
