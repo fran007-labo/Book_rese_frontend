@@ -26,7 +26,7 @@ const Sidebar = () => {
               <span>Dashboard</span>
             </li>
           </Link>
-          <Link to="dashboards/users/1" style={{ textDecoration: "none" }}>
+          <Link to="dashboards/users/own" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>My Reservation</span>

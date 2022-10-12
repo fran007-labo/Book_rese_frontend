@@ -16,7 +16,7 @@ export default function RouterConfig() {
         <Route path="/" element={<PageFrame />}>
           <Route path="/" element={<BooksIndex/>} />
           <Route path="/dashboards" element={<Dashboard/>} exact/>
-          <Route path="/dashboards/users/:id" element={<UserDetail/>} />
+          <Route path="/dashboards/users/own" element={<UserDetail/>} exact/>
           <Route path="/cart" element={<Cart/>} exact/>
           <Route path="/book/new" element={<BookEditAndNew/>} exact/>
           <Route path="/book/edit/:id" element={<BookEditAndNew/>}/>

@@ -18,7 +18,7 @@ const ReservedBookList = () => {
   useEffect(() => {
     onAuthStateChanged(auth, async(user) => {
       const idToken = await auth.currentUser.getIdToken()
-      apiUrl.get('/dashboards/users/2', { headers: {"Authorization" : `Bearer ${idToken}`} }).then(response => {
+      apiUrl.get('/dashboards/users/own', { headers: {"Authorization" : `Bearer ${idToken}`} }).then(response => {
         setUserInfo(response.data)
       })
     })
@@ -41,8 +41,8 @@ const ReservedBookList = () => {
             <TableRow key={index}>
               <TableCell className="tableCell">
                 <div className="cellWrapper">
-                  <img src={row.img} alt="" className="image" />
-                  {row.book}
+                  <img src={process.env.REACT_APP_S3_ENDPOINT + row.reservedBookImg} alt="" className="image" />
+                  {row.reservedBookName}
                 </div>
               </TableCell>
               <TableCell className="tableCell">{row.startDate}</TableCell>
