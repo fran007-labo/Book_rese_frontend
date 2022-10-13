@@ -10,9 +10,10 @@ import {
   TextInput
 } from "../components/Index";
 import ImageArea from "../components/Books/ImageArea";
+import { FlashMessages } from '../components/Index'
 
 // router
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // api
 import { apiUrl } from "../settings/ApiClient"
@@ -21,14 +22,16 @@ export default function BookEditAndNew() {
 
   const dispatch = useDispatch();
   const paramsFromLink = useLocation();
+  const navigate = useNavigate();
+  const [flashMessage, setFlashMessage] = useState({ message: '', status: '', open: false });
 
-///////
+  ///////
   // /book/edit/[:id]のpath時。
   // parameter名がstateの中身格納されている。
   const sentEditBookInfo = paramsFromLink.state
-///////
+  ///////
 
-  const 
+  const
     [id, setId] = useState(""),
     [title, setTitle] = useState(""),
     [body, setBody] = useState(""),
@@ -37,9 +40,9 @@ export default function BookEditAndNew() {
     [publisher, setPublisher] = useState("")
 
 
-  const createFormData = () => { 
+  const createFormData = () => {
     const formData = new FormData()
-    if (!images) return  
+    if (!images) return
     images.map((image) => {
       formData.append('images[]', image)
     })
@@ -53,10 +56,10 @@ export default function BookEditAndNew() {
 
   const saveBook = async () => {
     const bookRegiInfo = await createFormData()
-    const config = {headers: {"Content-Type": "multipart/form-data"}} // 画像ファイルを取り扱うのでform-dataで送信
-    apiUrl.post('/books',bookRegiInfo, config).then((r) => { 
-      console.log(r)
-    })
+    const config = { headers: { "Content-Type": "multipart/form-data" } } // 画像ファイルを取り扱うのでform-dataで送信
+    apiUrl.post('/books', bookRegiInfo, config).then((response) => {
+      setFlashMessage({ message: response.data['message'], status: response.data['status'], open: true })
+    }).catch(err => { console.log(err)})
   }
 
   const inputTitle = useCallback((event) => {
@@ -88,25 +91,26 @@ export default function BookEditAndNew() {
 
   return (
     <section className="c-section-wrapin">
+      {flashMessage.open && <FlashMessages {...flashMessage}/>}
       <h1>誰でも本を登録することが出来ます。</h1>
       <h2 className="u-text__headline u-text-center">商品の登録・編集</h2>
       <div className="c-section-container">
         <ImageArea images={images} setImages={setImages} />
         <TextInput
-          fullWidth={true} label={"タイトル"} multiline={false} required={true}
+          fullWidth={true} label={"タイトル(必須)"} multiline={false} required={true}
           onChange={inputTitle} rows={1} value={title} type={"text"}
+        />
+        <TextInput
+          fullWidth={true} label={"著者(必須)"} multiline={false} required={true}
+          onChange={inputAuthor} rows={1} value={author} type={"text"}
+        />
+        <TextInput
+          fullWidth={true} label={"出版社(必須)"} multiline={false} required={true}
+          onChange={inputPublisher} rows={1} value={publisher} type={"text"}
         />
         <TextInput
           fullWidth={true} label={"本の説明"} multiline={true}
           onChange={inputBody} rows={5} value={body} type={"text"}
-        />
-        <TextInput
-          fullWidth={true} label={"著者"} multiline={false} required={true}
-          onChange={inputAuthor} rows={1} value={author} type={"text"}
-        />
-        <TextInput
-          fullWidth={true} label={"出版社"} multiline={false} required={true}
-          onChange={inputPublisher} rows={1} value={publisher} type={"text"}
         />
         <div className="module-spacer--small" />
         <div className="module-spacer--small" />

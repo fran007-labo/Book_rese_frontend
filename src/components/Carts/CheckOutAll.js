@@ -28,8 +28,8 @@ export default function CheckOutAll(props) {
   const checkOutAll = () => {
     const url = '/check_outs'
     const data = {start_date: startDate, return_date: returnDate}
-    apiUrl.post(url, data).then((r) => {
-      console.log(r)
+    apiUrl.post(url, data).then((response) => {
+      window.location.reload();
     })
   }
 
@@ -47,7 +47,7 @@ export default function CheckOutAll(props) {
             display="block"
             variant="caption"
           >
-            Start Date
+            貸出スタート日
           </Typography>
         </li>
         <ListItem sx={{justifyContent: 'center'}}>
@@ -68,7 +68,7 @@ export default function CheckOutAll(props) {
             display="block"
             variant="caption"
           >
-            Return Date
+            返却日
           </Typography>
         </li>
         <ListItem sx={{justifyContent: 'center'}}>
