@@ -10,7 +10,6 @@ export {default as NothingsInCart} from './Carts/NothingsInCart';
 
 // Button
 export {default as SignIn} from './Button/SignIn';
-export {default as MenuButton} from './Button/MenuButton';
 
 // UIkit
 export {default as SelectBox} from './UIkit/SelectBox';

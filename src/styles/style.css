@@ -23,10 +23,10 @@
   padding: 96px 0
 }
 .c-section-wrapin {
+  padding-top: 30px;
   margin: 0 auto;
   max-width: 575px;
   position: relative;
-  padding: 0 1rem;
   text-align: center;
   width: 100%;
 }

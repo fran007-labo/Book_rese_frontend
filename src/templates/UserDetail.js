@@ -40,7 +40,7 @@ const UserDetail = () => {
             </div>
           </div>
           <div className="right">
-            <Chart aspect={3 / 1} title="User Spending ( Last 6 Months)" />
+            <Chart aspect={3 / 1} title="最近のレンタル傾向" />
           </div>
         </div>
         <div className="bottom">
