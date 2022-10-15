@@ -8,7 +8,7 @@ export const listenAuthState = () => {
         const userInfo = setSignInValue(user.uid, user.displayName, user.email, user.photoURL)
         dispatch(signInAction(userInfo))
       } else {
-        console.log('users/operation.js userがログインしていません')
+        console.log('userがログインしていません')
       }
     })
   }
@@ -17,7 +17,6 @@ export const listenAuthState = () => {
 export const signIn = (uid, displayName, email, photoURL) => {
   return (dispatch) => {
     const userInfo = setSignInValue(uid, displayName, email, photoURL);
-    console.log(userInfo);
     dispatch(signInAction(userInfo));
   };
 }

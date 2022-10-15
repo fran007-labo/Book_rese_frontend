@@ -37,7 +37,6 @@ export default function ImageArea(props) {
     <div>
       <div className="p-grid__list-images">
       <p>画像一枚まででお願いします。<br/>(今後複数アップ出来ます。）<br/>画像クリックで削除</p>
-      {console.log(props.images)}
         {props.images.length > 0 && (
           props.images.map((image, index) => 
             <ImagePreview 

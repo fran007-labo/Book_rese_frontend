@@ -32,7 +32,6 @@ const ReservedBookList = () => {
     onAuthStateChanged(auth, async(user) => {
       const idToken = await auth.currentUser.getIdToken()
       apiUrl.post(`/reservations/${reservedId}/return`, { headers: {"Authorization" : `Bearer ${idToken}`} }).then(response => {
-        console.log(response.data)
         setFlashMessage({ message: response.data['message'], status: response.data['status'], open: true })
       })
     })
