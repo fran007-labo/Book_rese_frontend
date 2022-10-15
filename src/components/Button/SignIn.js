@@ -1,10 +1,10 @@
 import {useEffect, useState} from 'react'
 import Button from '@mui/material/Button';
-import axios from 'axios';
 
 // firebase
 import { signInWithPopup } from 'firebase/auth'
 import { auth, provider } from "../../settings/firebase";
+import { apiUrl } from "../../settings/ApiClient";
 
 // reducks
 import { useDispatch, useSelector } from 'react-redux';
@@ -45,14 +45,14 @@ export default function SignIn() {
 // サインイン 
 function SingInButton() {
   const dispatch = useDispatch();
-  const url = `${process.env.REACT_APP_API_BASE_URL}/users/registrations`;
+  const url = '/users/registrations';
   const SingInWithGoogle = () => {
     signInWithPopup(auth, provider)
     .then((result) => {
       const user = result.user;
       const data = { uid: user.uid, name: user.displayName, email: user.email };
       user.getIdToken().then(idToken => {
-        axios.post(url, { token: idToken, registration: data });
+        apiUrl.post(url, { token: idToken, registration: data });
       });
       dispatch(signIn(user.uid, user.displayName, user.email, user.photoURL));
 
@@ -73,9 +73,9 @@ function SingInButton() {
 // サインアウト
 function SingOutButton() {
   const dispatch = useDispatch();
-  const url = `${process.env.REACT_APP_API_BASE_URL}/users/registrations`;
+  const url = '/users/registrations';
   const singOut = () => {
-    auth.signOut();
+    apiUrl.signOut();
     dispatch(signOut())
   }
 
