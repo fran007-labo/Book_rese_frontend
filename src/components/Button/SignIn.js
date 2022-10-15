@@ -10,6 +10,7 @@ import { apiUrl } from "../../settings/ApiClient";
 import { useDispatch, useSelector } from 'react-redux';
 import { signIn, signOutOperation, listenAuthState} from '../../reducks/users/operations';
 import { getSignedIn, getUserName, getUserPhotoURL } from "../../reducks/users/selectors";
+import axios from 'axios';
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -45,14 +46,14 @@ export default function SignIn() {
 // サインイン 
 function SingInButton() {
   const dispatch = useDispatch();
-  const url = '/users/registrations';
+  const url = `${process.env.REACT_APP_API_BASE_URL}/api/v1/users/registrations`;
   const SingInWithGoogle = () => {
     signInWithPopup(auth, provider)
     .then((result) => {
       const user = result.user;
       const data = { uid: user.uid, name: user.displayName, email: user.email };
       user.getIdToken().then(idToken => {
-        apiUrl.post(url, { token: idToken, registration: data });
+        axios.post(url, { token: idToken, registration: data });
       });
       dispatch(signIn(user.uid, user.displayName, user.email, user.photoURL));
 
