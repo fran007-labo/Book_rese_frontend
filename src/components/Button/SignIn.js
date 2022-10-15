@@ -53,7 +53,11 @@ function SingInButton() {
       const user = result.user;
       const data = { uid: user.uid, name: user.displayName, email: user.email };
       user.getIdToken().then(idToken => {
-        axios.post(url, { token: idToken, registration: data });
+        axios.post(
+          url, 
+          { token: idToken, registration: data },
+          { header: {'Access-Control-Allow-Origin': '*'} }
+        );
       });
       dispatch(signIn(user.uid, user.displayName, user.email, user.photoURL));
 
