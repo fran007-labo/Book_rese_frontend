@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Book from "../components/Books/Book";
 import Pagination from '@mui/material/Pagination';
-import axios from 'axios';
+
+import { apiUrl } from '../settings/ApiClient'
 
 export default function BooksIndex() {
   const [page, setPage] = useState(1);
@@ -11,7 +12,7 @@ export default function BooksIndex() {
   const [books, setBooks] = useState([])
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/books`)
+    apiUrl.get('/books')
     .then(res => {
       setBooks(res.data)
       setPageCount(Math.ceil(res.data.length/displayNum))

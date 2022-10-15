@@ -45,7 +45,7 @@ export default function SignIn() {
 // サインイン 
 function SingInButton() {
   const dispatch = useDispatch();
-  const url = 'http://localhost:8000/api/v1/users/registrations';
+  const url = `${process.env.REACT_APP_API_BASE_URL}/users/registrations`;
   const SingInWithGoogle = () => {
     signInWithPopup(auth, provider)
     .then((result) => {
@@ -73,7 +73,7 @@ function SingInButton() {
 // サインアウト
 function SingOutButton() {
   const dispatch = useDispatch();
-  const url = 'http://localhost:8000/api/v1/users/registrations';
+  const url = `${process.env.REACT_APP_API_BASE_URL}/users/registrations`;
   const singOut = () => {
     auth.signOut();
     dispatch(signOut())
