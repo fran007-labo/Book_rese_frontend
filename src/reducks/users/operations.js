@@ -22,7 +22,7 @@ export const signIn = (uid, displayName, email, photoURL) => {
   };
 }
 
-export const signOut = () => {
+export const signOutOperation = () => {
   return (dispatch) => {
     auth.signOut().then(() => {
       dispatch(signOutAction());

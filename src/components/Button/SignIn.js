@@ -8,7 +8,7 @@ import { apiUrl } from "../../settings/ApiClient";
 
 // reducks
 import { useDispatch, useSelector } from 'react-redux';
-import { signIn, signOut, listenAuthState} from '../../reducks/users/operations';
+import { signIn, signOutOperation, listenAuthState} from '../../reducks/users/operations';
 import { getSignedIn, getUserName, getUserPhotoURL } from "../../reducks/users/selectors";
 
 export default function SignIn() {
@@ -73,15 +73,16 @@ function SingInButton() {
 // サインアウト
 function SingOutButton() {
   const dispatch = useDispatch();
-  const url = '/users/registrations';
-  const singOut = () => {
-    apiUrl.signOut();
-    dispatch(signOut())
+  const url = '/users/sign_outs';
+
+  const signOut = () => {
+    apiUrl.post(url)
+    dispatch(signOutOperation())
   }
 
   return (
     <div>
-      <Button onClick={() => singOut()} variant="contained" color="primary">
+      <Button onClick={() => signOut()} variant="contained" color="primary">
         サインアウト
       </Button>
     </div>
