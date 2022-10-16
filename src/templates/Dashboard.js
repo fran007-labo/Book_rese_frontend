@@ -13,6 +13,7 @@ const Dashboard = () => {
     onAuthStateChanged(auth, async(user) => {
       const idToken = await auth.currentUser.getIdToken()
       apiUrl.get('/dashboards', { headers: {"Authorization" : `Bearer ${idToken}`} }).then(response => {
+        // console.log(response.data)
         setUsersList(response.data)
       })
     })

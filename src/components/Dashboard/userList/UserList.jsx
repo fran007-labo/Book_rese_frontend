@@ -15,7 +15,7 @@ const UserList = (props) => {
         <TableHead>
           <TableRow>
             <TableCell className="tableCell">Users</TableCell>
-            <TableCell className="tableCell">lending books</TableCell>
+            <TableCell className="tableCell">books</TableCell>
             <TableCell className="tableCell">start date</TableCell>
             <TableCell className="tableCell">return date</TableCell>
             <TableCell className="tableCell">Status</TableCell>
@@ -30,7 +30,12 @@ const UserList = (props) => {
                   {row.userName}
                 </div>
               </TableCell>
-              <TableCell className="tableCell">{row.bookCount}</TableCell>
+              <TableCell className="tableCell">
+                <div className="cellWrapper">
+                  <img src={process.env.REACT_APP_S3_ENDPOINT + row.bookImg} alt="" className="image" />
+                  {row.bookTitle}
+                </div>
+              </TableCell>
               <TableCell className="tableCell">{row.startDate}</TableCell>
               <TableCell className="tableCell">{row.returnDate}</TableCell>
               <TableCell className="tableCell">
