@@ -11,21 +11,21 @@ function HeroSection() {
       <h1>Bizlink Library</h1>
       <p>下の[スタート]ボタンを押すと本が見れます。</p>
       <p>まだまだバグが多いかと思いますが修正していきます。</p>
+      <p>しばらくアクセスがない場合にバックエンドサーバーが落ちてしまいますので、<br/>エラーの際には恐れ入りますが数秒経ってかかリロードして頂けると助かります。</p>
       <div className='hero-btns'>
           <Button
             className='btns'
             buttonStyle='btn--outline'
             buttonSize='btn--large'
+            path='/'
           >
             スタート
           </Button>
-        <Button
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-        >
-          Youtube クリック<i className='far fa-play-circle' />
-        </Button>
+        <a href='https://www.youtube.com/watch?v=x5onHuMZlbI' className='btn-mobile'>
+          <button className='btn btn--outline btn--large'>
+            Youtube クリック<i className='far fa-play-circle' />
+          </button>
+        </a>
       </div>
     </div>
   );
