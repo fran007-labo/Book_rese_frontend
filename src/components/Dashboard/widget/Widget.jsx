@@ -15,7 +15,7 @@ const Widget = ({ type }) => {
   switch (type) {
     case "user":
       data = {
-        title: "TOTAL USERS",
+        title: "TOTAL USERS(COMMING UP THIS FEATURE)",
         isMoney: false,
         link: "See all users",
         icon: (
@@ -31,7 +31,7 @@ const Widget = ({ type }) => {
       break;
     case "book":
       data = {
-        title: "TOTAL BOOKS",
+        title: "TOTAL BOOKS(COMMING UP THIS FEATURE)",
         isMoney: false,
         link: "View all orders",
         icon: (
@@ -47,7 +47,7 @@ const Widget = ({ type }) => {
       break;
     case "lend":
       data = {
-        title: "NOW LENDING",
+        title: "NOW LENDING(COMMING UP THIS FEATURE)",
         isMoney: false,
         link: "View net earnings",
         icon: (
