@@ -1,4 +1,4 @@
-# README
+# Front End
 
 # 1,  アプリケーションの概要
 前社では福利厚生で月に2冊の本を購入でき、さらに社長自らがたくさんの本を会社に持参していました。
@@ -15,18 +15,11 @@
 - ページネーション機能。
 
 # 3,　アプリケーション内で使用している技術
-- 使用言語とフレイムワーク
-  - Ruby version 2.7.4
-  - Ruby on Rails version 6.0.4
-- データベース
-  - PostgreSQL
-- テスト
-  - Rspec
-  - Factory_bot_rails
-- インフラ
-  - AWS Ecs fargate
-  - Nginx(webサーバー)
-- その他
-  - Firebase auth rails
-  - Carrierwave
-  - Mini_magick
+- 使用言語
+  - React 17.0.2
+  - 
+- 使用ライブラリ
+  - Firebase auth 
+  - Redux
+  - Axios
+  - Typescript
