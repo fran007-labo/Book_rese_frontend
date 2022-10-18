@@ -1,4 +1,4 @@
-# Front End
+# FrontEnd
 
 # 1,  アプリケーションの概要
 前社では福利厚生で月に2冊の本を購入でき、さらに社長自らがたくさんの本を会社に持参していました。
@@ -17,12 +17,11 @@
 # 3,　アプリケーション内で使用している技術
 - 使用言語
   - React 17.0.2
-  - 
+
 - 使用ライブラリ
   - Firebase auth 
   - Redux
   - Axios
-  - Typescript
 
 # 4,　成果物
 https://main.d2d7pygf1vwixv.amplifyapp.com/lp
