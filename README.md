@@ -23,3 +23,6 @@
   - Redux
   - Axios
   - Typescript
+
+# 4,　成果物
+https://main.d2d7pygf1vwixv.amplifyapp.com/lp
