@@ -19,8 +19,8 @@
   - React 17.0.2
 
 - 使用ライブラリ
-  -React  version 17.0.2
-  -Redux version  7.2.8
+  - React  version 17.0.2
+  - Redux version  7.2.8
   - Firebase auth
   - React router dom
   - Material Ui
