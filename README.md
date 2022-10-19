@@ -19,9 +19,12 @@
   - React 17.0.2
 
 - 使用ライブラリ
-  - Firebase auth 
-  - Redux
-  - Axios
+  -React  version 17.0.2
+  -Redux version  7.2.8
+  - Firebase auth
+  - React router dom
+  - Material Ui
+
 
 # 4,　成果物
 https://main.d2d7pygf1vwixv.amplifyapp.com/lp
